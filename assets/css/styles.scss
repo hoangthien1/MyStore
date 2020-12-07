@@ -84,6 +84,7 @@ html{
     background-color: #646464;
     &-contain{
         height: 30px;
+        position: relative;
         @include flex(center, space-between);
     }
     &-list{
@@ -96,7 +97,7 @@ html{
             user-select: none;
             font-size: 1.5rem;
             font-weight: 600;
-            transition: all .3s;
+            transition: color .3s;
             &-link{
                 color: $primary-color;
                 transition: all .3s;
@@ -132,27 +133,41 @@ html{
         }
     }
     &-search{
-        user-select: none;
-        width: 300px;
+        position: relative;
+        height: 30px;
+        width: 0;
+        background-color: #d4d4d4;
+        border-radius: 20px;
+        transition: width .3s;
         &-input{
+            position: absolute;
             outline: none;
-            border-radius: 15px;
             border: none;
-            width: 85%;
-            padding: 5px 10px;
-            font-size: 1rem;
-            color: $text-color;
-            transition: all .3s;
-        }
-        &-input:focus{
-            padding: 7px 12px;
+            background-color: transparent;
+            padding: 5px;
+            top: 1px;
+            width: 75%;
+            border-radius: 20px;
         }
         &-icon{
-            font-size: 1.3rem;
-            position: relative;
-            right: 25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #F1F0F1;
+            text-align: center;
+            line-height: 5rem;
+            font-size: 1.2rem;
+            position: absolute;
+            right: -30px;
+            top: -10px;
+        }
+        &-expand{
+            width: 200px; //
+            transition: width .3s;
+            padding-left: 5px;//    
         }
     }
+
     &-cart{
         user-select: none;
         color: white;

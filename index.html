@@ -69,7 +69,7 @@
                     </ul>
                     <div class="header__bottom-search">
                         <input placeholder="Tìm kiếm" type="text" class="header__bottom-search-input">
-                        <i class="fas fa-search header__bottom-search-icon"></i>
+                        <i class="fas fa-search header__bottom-search-icon"></i>                      
                     </div>
                     <a href="#" class="header__bottom-cart">
                         GIỎ HÀNG 
@@ -81,5 +81,14 @@
         <!-- Begin of the website body -->
         
     </div>
+
+    <script>
+        var box = document.querySelector('.header__bottom-search');
+        var btn = document.querySelector('.header__bottom-search-icon');
+        btn.onclick = () =>{
+            box.classList.toggle('header__bottom-search-expand');
+
+        }
+    </script>
 </body>
 </html>
