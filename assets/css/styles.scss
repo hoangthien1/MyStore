@@ -1,3 +1,5 @@
+$primary-color: #fad06d;
+$text-color: #302e2ecc;
 *{
     padding: 0;
     margin: 0;
@@ -8,6 +10,68 @@ img{
     display: block;
     max-width: 100%;
 }
+a{
+    text-decoration: none;
+}
 html{
     font-size: 62.5%; // 1 rem = 10px
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo-img{
+    width: 150px;
+}
+
+@mixin flex($align: flex-start, $justify: flex-start, $wrap: nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+.header{
+    &__contain{
+        @include flex(center, space-between);
+        border-bottom: 1px solid;
+    }
+    &__navigate{
+        @include flex(flex-start, space-between);
+        &-list{
+            @include flex(flex-start, space-between);
+            &-items:last-child{
+                cursor: pointer;
+            }
+            &-items:not(:last-child){
+                margin-right: 25px;
+
+            }
+            &-items{
+                font-size: 1.8rem;
+                color: $text-color;
+                font-weight: 600;
+                &-user{
+                    color: $primary-color;
+                }
+                &-link{
+                    position: relative;
+                    display: inline-block;
+                    color: $text-color;
+                }
+                // &-link::after{
+                //     content: '';
+                //     position: absolute;
+                //     height: 1.5px;
+                //     background-color: #534f40;
+                //     bottom: -5px;
+                //     transition: all .3s ease-in;
+                //     left: 50px;
+                //     right: 50px;
+                // }
+                // &-link:hover::after{
+                //     left: 0;
+                //     right: 0;
+                // }
+            }
+        }
+    }
 }
