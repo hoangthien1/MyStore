@@ -30,9 +30,11 @@ html{
 }
 
 .header{
+    background-color: #F1F0F1;
+    border-bottom: 1px solid #d4d4d4;
     &__contain{
         @include flex(center, space-between);
-        border-bottom: 1px solid;
+        
     }
     &__navigate{
         @include flex(flex-start, space-between);
@@ -46,6 +48,7 @@ html{
 
             }
             &-items{
+                user-select: none;
                 font-size: 1.8rem;
                 color: $text-color;
                 font-weight: 600;
@@ -72,6 +75,92 @@ html{
                 //     right: 0;
                 // }
             }
+        }
+    }  
+}
+
+.header__bottom{
+    padding: 20px 0;
+    background-color: #646464;
+    &-contain{
+        height: 30px;
+        @include flex(center, space-between);
+    }
+    &-list{
+        @include flex(center, space-between);
+        &-items:not(:last-child){
+            margin-right: 25px;
+        }
+        &-items{
+            position: relative;
+            user-select: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: all .3s;
+            &-link{
+                color: $primary-color;
+                transition: all .3s;
+                position: relative;
+            }
+            &-link::after{
+                content: '';
+                position: absolute;
+                height: 1.5px;
+                background-color: white;
+                bottom: -5px;
+                transition: all .3s;
+                left: 55px;
+                right: 55px;
+            }
+            &-link:hover::after{
+                left: 0;
+                right: 0;
+            }
+            
+        }
+        &-items:not(:last-child)::after{
+            content: '';
+            position: absolute;
+            height: 25px;
+            width: 1px;
+            background-color: $primary-color;
+            bottom: -5px;
+            right: -14px;
+        }
+        &-items:hover> &-items-link{
+            color: white;
+        }
+    }
+    &-search{
+        user-select: none;
+        width: 300px;
+        &-input{
+            outline: none;
+            border-radius: 15px;
+            border: none;
+            width: 85%;
+            padding: 5px 10px;
+            font-size: 1rem;
+            color: $text-color;
+            transition: all .3s;
+        }
+        &-input:focus{
+            padding: 7px 12px;
+        }
+        &-icon{
+            font-size: 1.3rem;
+            position: relative;
+            right: 25px;
+        }
+    }
+    &-cart{
+        user-select: none;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 600;
+        &-icon{
+            color: $primary-color;
+            font-size: 1.9rem;
         }
     }
 }

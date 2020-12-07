@@ -23,12 +23,15 @@ html {
   width: 150px;
 }
 
+.header {
+  background-color: #F1F0F1;
+  border-bottom: 1px solid #d4d4d4;
+}
 .header__contain {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  border-bottom: 1px solid;
 }
 .header__navigate {
   display: flex;
@@ -49,6 +52,7 @@ html {
   margin-right: 25px;
 }
 .header__navigate-list-items {
+  user-select: none;
   font-size: 1.8rem;
   color: #302e2ecc;
   font-weight: 600;
@@ -60,6 +64,97 @@ html {
   position: relative;
   display: inline-block;
   color: #302e2ecc;
+}
+
+.header__bottom {
+  padding: 20px 0;
+  background-color: #646464;
+}
+.header__bottom-contain {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.header__bottom-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.header__bottom-list-items:not(:last-child) {
+  margin-right: 25px;
+}
+.header__bottom-list-items {
+  position: relative;
+  user-select: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.header__bottom-list-items-link {
+  color: #fad06d;
+  transition: all 0.3s;
+  position: relative;
+}
+.header__bottom-list-items-link::after {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  background-color: white;
+  bottom: -5px;
+  transition: all 0.3s;
+  left: 55px;
+  right: 55px;
+}
+.header__bottom-list-items-link:hover::after {
+  left: 0;
+  right: 0;
+}
+.header__bottom-list-items:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 1px;
+  background-color: #fad06d;
+  bottom: -5px;
+  right: -14px;
+}
+.header__bottom-list-items:hover > .header__bottom-list-items-link {
+  color: white;
+}
+.header__bottom-search {
+  user-select: none;
+  width: 300px;
+}
+.header__bottom-search-input {
+  outline: none;
+  border-radius: 15px;
+  border: none;
+  width: 85%;
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: #302e2ecc;
+  transition: all 0.3s;
+}
+.header__bottom-search-input:focus {
+  padding: 7px 12px;
+}
+.header__bottom-search-icon {
+  font-size: 1.3rem;
+  position: relative;
+  right: 25px;
+}
+.header__bottom-cart {
+  user-select: none;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.header__bottom-cart-icon {
+  color: #fad06d;
+  font-size: 1.9rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
