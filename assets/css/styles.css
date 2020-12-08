@@ -85,10 +85,9 @@ html {
   flex-wrap: nowrap;
 }
 .header__bottom-list-items:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 100px;
 }
 .header__bottom-list-items {
-  position: relative;
   user-select: none;
   font-size: 1.5rem;
   font-weight: 600;
@@ -113,17 +112,32 @@ html {
   left: 0;
   right: 0;
 }
-.header__bottom-list-items:not(:last-child)::after {
+.header__bottom-list-items:first-child::after {
   content: "";
   position: absolute;
-  height: 25px;
-  width: 1px;
-  background-color: #fad06d;
-  bottom: -5px;
-  right: -14px;
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 22px solid #F1F0F1;
+  top: 0px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity linear 0.3s, visibility linear 0.3s, top linear 0.3s;
+}
+.header__bottom-list-items:hover::after {
+  opacity: 1;
+  visibility: visible;
+  top: 30px;
 }
 .header__bottom-list-items:hover > .header__bottom-list-items-link {
   color: white;
+}
+.header__bottom-list-items:hover > .menu__child {
+  opacity: 1;
+  visibility: visible;
+  top: 169%;
 }
 .header__bottom-search {
   position: relative;
@@ -140,7 +154,7 @@ html {
   background-color: transparent;
   padding: 5px;
   top: 1px;
-  width: 75%;
+  width: 85%;
   border-radius: 20px;
 }
 .header__bottom-search-icon {
@@ -156,7 +170,7 @@ html {
   top: -10px;
 }
 .header__bottom-search-expand {
-  width: 200px;
+  width: 400px;
   transition: width 0.3s;
   padding-left: 5px;
 }
@@ -169,6 +183,45 @@ html {
 .header__bottom-cart-icon {
   color: #fad06d;
   font-size: 1.9rem;
+}
+
+.menu__child {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #718093;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity linear 0.3s, visibility linear 0.3s, top linear 0.3s;
+}
+.menu__child-items {
+  width: 25%;
+}
+.menu__child-items h4 {
+  font-size: 2rem;
+  padding: 15px;
+  background-color: #F1F0F1;
+}
+.menu__child-items h4 a {
+  color: #fad06d;
+  transition: color 0.3s;
+}
+.menu__child-items h4 a:hover {
+  color: black;
+}
+.menu__child-list-items {
+  padding: 15px;
+}
+.menu__child-list-items-link {
+  color: white;
+  transition: color 0.3s;
+}
+.menu__child-list-items-link:hover {
+  color: #fad06d;
 }
 
 /*# sourceMappingURL=styles.css.map */
