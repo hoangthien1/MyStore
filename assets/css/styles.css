@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 img {
@@ -16,7 +16,7 @@ a {
 
 html {
   font-size: 62.5%;
-  font-family: "Poppins", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .logo-img {
@@ -55,7 +55,7 @@ html {
   user-select: none;
   font-size: 1.8rem;
   color: #302e2ecc;
-  font-weight: 600;
+  font-weight: 700;
 }
 .header__navigate-list-items-user {
   color: #fad06d;
@@ -85,11 +85,11 @@ html {
   flex-wrap: nowrap;
 }
 .header__bottom-list-items:not(:last-child) {
-  margin-right: 100px;
+  margin-right: 50px;
 }
 .header__bottom-list-items {
   user-select: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
   transition: color 0.3s;
 }
@@ -115,21 +115,10 @@ html {
 .header__bottom-list-items:first-child::after {
   content: "";
   position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 22px solid transparent;
-  border-right: 22px solid transparent;
-  border-bottom: 22px solid #F1F0F1;
-  top: 0px;
+  width: 45px;
+  height: 30px;
+  top: 20px;
   left: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity linear 0.3s, visibility linear 0.3s, top linear 0.3s;
-}
-.header__bottom-list-items:hover::after {
-  opacity: 1;
-  visibility: visible;
-  top: 30px;
 }
 .header__bottom-list-items:hover > .header__bottom-list-items-link {
   color: white;
@@ -137,52 +126,70 @@ html {
 .header__bottom-list-items:hover > .menu__child {
   opacity: 1;
   visibility: visible;
-  top: 169%;
+  top: 165%;
 }
 .header__bottom-search {
+  user-select: none;
+  display: block;
+  width: 300px;
   position: relative;
-  height: 30px;
-  width: 0;
-  background-color: #d4d4d4;
-  border-radius: 20px;
-  transition: width 0.3s;
-}
-.header__bottom-search-input {
-  position: absolute;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  padding: 5px;
-  top: 1px;
-  width: 85%;
-  border-radius: 20px;
+  right: 200px;
 }
 .header__bottom-search-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+  user-select: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
   background-color: #F1F0F1;
   text-align: center;
-  line-height: 5rem;
+  line-height: 3rem;
   font-size: 1.2rem;
-  position: absolute;
-  right: -30px;
-  top: -10px;
 }
-.header__bottom-search-expand {
-  width: 400px;
-  transition: width 0.3s;
-  padding-left: 5px;
+.header__bottom-search-input {
+  width: 0;
+  user-select: none;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  opacity: 0;
+  transition: width 0.3s, opacity 0.3s;
+  font-size: 1.2rem;
+}
+.header__bottom-search-input-active {
+  width: 80%;
+  opacity: 1;
+  padding: 5px 10px 5px 10px;
+  transition: width 0.3s, opacity 0.3s;
 }
 .header__bottom-cart {
   user-select: none;
   color: white;
   font-size: 1.6rem;
   font-weight: 600;
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  width: 150px;
+  position: relative;
 }
 .header__bottom-cart-icon {
   color: #fad06d;
   font-size: 1.9rem;
+}
+.header__bottom-cart-number {
+  user-select: none;
+  border: 1px solid #fad06d;
+  background-color: #fad06d;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+  line-height: 1.5rem;
+  border-radius: 3px;
+  color: #fa5a5a;
 }
 
 .menu__child {
@@ -196,6 +203,7 @@ html {
   display: flex;
   opacity: 0;
   visibility: hidden;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
   transition: opacity linear 0.3s, visibility linear 0.3s, top linear 0.3s;
 }
 .menu__child-items {

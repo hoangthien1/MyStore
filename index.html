@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiện's Website</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
@@ -22,7 +22,7 @@
                     <nav class="header__navigate">
                         <ul class="header__navigate-list">
                             <li class="header__navigate-list-items">
-                                <a href="#" class="header__navigate-list-items-link">Về chúng tôi</a>
+                                <a href="#" class="header__navigate-list-items-link">Về Chúng Tôi</a>
                             </li>
                             <li class="header__navigate-list-items">
                                 <a href="#" class="header__navigate-list-items-link" style="color: #1096F4;">Fanpage</a>
@@ -38,6 +38,7 @@
                 </div>
             </div>
         </header>
+
         <div class="header__bottom">
             <div class="grid wide">
                 <div class="header__bottom-contain">
@@ -105,22 +106,22 @@
                                     </ul>
                                 </div>             
                             </div>
-        
                         </li>
                         <li class="header__bottom-list-items">
-                            <a href="#" class="header__bottom-list-items-link">Quần&Áo</a>
+                            <a href="#" class="header__bottom-list-items-link">Quần & Áo</a>
                         </li>
                         <li class="header__bottom-list-items">
                             <a href="#" class="header__bottom-list-items-link">Phụ Kiện Khác</a>
                         </li>
                     </ul>
                     <div class="header__bottom-search">
-                        <input placeholder="Tìm kiếm" type="text" class="header__bottom-search-input">
-                        <i class="fas fa-search header__bottom-search-icon"></i>                      
+                        <i class="fas fa-search header__bottom-search-icon"></i>    
+                        <input placeholder="Tìm kiếm" type="text" class="header__bottom-search-input">                             
                     </div>
                     <a href="#" class="header__bottom-cart">
-                        GIỎ HÀNG 
+                        <span class="header__bottom-cart-text">Giỏ hàng</span>
                         <i class="fas fa-shopping-basket header__bottom-cart-icon"></i>
+                        <span class="header__bottom-cart-number">0</span>
                     </a>
                 </div>       
             </div>
@@ -129,13 +130,6 @@
         
     </div>
 
-    <script>
-        var box = document.querySelector('.header__bottom-search');
-        var btn = document.querySelector('.header__bottom-search-icon');
-        btn.onclick = () =>{
-            box.classList.toggle('header__bottom-search-expand');
-
-        }
-    </script>
+    <script src="./assets/scripts/inputSearch.js"></script>
 </body>
 </html>
