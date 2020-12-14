@@ -1,5 +1,6 @@
 $primary-color: #fad06d;
-$text-color: #302e2ecc;
+$text-color: #252424cc;
+$sale-color: #fa5741;
 *{
     padding: 0;
     margin: 0;
@@ -27,7 +28,6 @@ html{
     justify-content: $justify;
     flex-wrap: $wrap;
 }
-
 .header{
     background-color: #F1F0F1;
     border-bottom: 1px solid #d4d4d4;
@@ -265,7 +265,7 @@ html{
 
 // image section
 .image__section{
-    height: 550px;
+    height: 500px;
     display: flex; 
     &-slide{
         flex: 2;
@@ -282,8 +282,8 @@ html{
     position: relative;
     bottom: 100px;
     left: 45%;
-    width: 200px;
-    padding: 15px;
+    width: 180px;
+    padding: 5px;
     background-color: $primary-color;
     border: 1px solid $primary-color;
     border-radius: 35px;
@@ -312,4 +312,139 @@ html{
     100%{
         transform: translateY(0%);
     }
+}
+
+// products section
+.products__section{
+    margin-top: -35px;
+    &-heading-wrap{
+        @include flex(center, space-between);
+        a{
+            width: 20%;
+            font-size: 2.4rem;
+            font-weight: 500;
+            background-color: black;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            transition: transform .3s;
+        }
+        a:last-child{
+            background-color: white;
+            color: black;
+        }
+        a:last-child:hover{
+            transform: translateY(-5px);
+        }
+        border-bottom: 2px solid black;
+        margin-bottom: 30px;
+    }
+    &-banner-link{
+        width: 100%;
+        display: inline-block; // thẻ a mặc định là inline nên không apply margin đc phải chuyển sang block mới có thể sử dụng
+        img{
+            width: 100%;
+            height: 380px;
+        }
+    }
+    &-banner-link:not(:last-child){
+        margin-bottom: 30px;
+    }
+
+
+}
+.products__wrap{
+    width: 210px;
+    height: 328px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    padding: 5px;
+    transition: transform .3s;
+    overflow: hidden;
+    position: relative;
+    &-sale{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: $sale-color;
+        background-color: rgba($color: $primary-color, $alpha: 0.6);
+        width: 50px;
+        height: 60px;
+        text-align: center;
+        line-height: 1.8rem;
+    }
+    &-sale::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 25px solid white;
+    }
+    &-link{
+        img{
+            width: 100%;
+            height: 207px;
+        }
+    }
+    &-name{
+        display: block;
+        width: 100%;
+        height: 35px;
+        color: black;
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin: 5px 0;
+        text-transform: capitalize;
+    }
+    &-rating{
+        margin: 15px 0;
+        width: 100%;
+        height: 15px;
+        display: flex;
+        i{
+            font-size: 1.4rem;
+            color: $primary-color;
+        }
+    }
+    &-price{
+        margin-top: 15px;
+        width: 100%;
+        @include flex(center,space-between);
+        transition: transform .3s;
+        &-new{
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+        &-old{
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-decoration: line-through;
+        }
+    }
+    &-active{
+        width: 100%;
+        transition: transform .5s;
+        @include flex(center, space-around);
+        a{
+            color: $primary-color;
+            font-size: 3rem;
+        }
+        transform: translateY(20px);
+    }
+}
+.products__wrap:hover{
+    transform: translateY(-5px);
+}
+.products__wrap:hover  > .products__wrap-active{
+    transform: translateY(-25px);
+}
+.products__wrap:hover  > .products__wrap-price{
+    transform: translateY(50px);
 }
