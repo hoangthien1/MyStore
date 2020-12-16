@@ -1,0 +1,37 @@
+/* tablet */
+/* ipad pro */
+@media screen and (max-width: 1024px){
+    .header__bottom-search{
+        right: 100px;
+    }
+    .image__section {
+        height: 300px;
+    }
+    .infor-btn{
+        width: 110px;
+        font-size: 2rem;
+    }
+}
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__bottom-search{
+        display: none;
+    }
+    .logo__wrap-link img {
+        width: 160px;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__bottom-search{
+        display: none;
+    }
+    .logo__wrap-link img {
+        width: 160px;
+    }
+}
