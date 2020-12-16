@@ -16,6 +16,7 @@ a{
 html{
     font-size: 62.5%; // 1 rem = 10px
     font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .logo-img{
@@ -31,6 +32,21 @@ html{
 .header{
     background-color: #F1F0F1;
     border-bottom: 1px solid #d4d4d4;
+    &__small{
+        @include flex(center, flex-end);
+        padding-top: 5px;
+        color: black;
+        &-contact span{
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.4rem;
+            text-decoration: underline;
+        }
+        &-contact i{
+            margin-right: 10px;
+            font-size: 1.6rem
+        }
+    }
     &__contain{
         @include flex(center, space-between);
         
@@ -222,6 +238,7 @@ html{
 
 // menu child 
 .menu__child{
+    z-index: 1;
     position: absolute;
     top: 100%;
     left: 0;
@@ -313,6 +330,22 @@ html{
         transform: translateY(0%);
     }
 }
+// logo section
+.logo__wrap{
+    @include flex(baseline,space-around);
+    height: 230px;
+    &-link{
+        img{
+            width: 200px;   
+        }
+    }
+    &-link:first-child{
+        img{
+            height: 100px;
+        }
+    }
+}
+
 
 // products section
 .products__section{
@@ -427,4 +460,115 @@ html{
 }
 .products__wrap:hover  > .products__wrap-price{
     transform: translateY(50px);
+}
+
+
+// guaranted section
+.guaranted{
+    background-color: #eeecec;
+    border-top: 1px solid #c0bdbd;
+    &__wrap{
+        height: 110px;
+        @include flex(center,space-between);
+        &-content{
+            @include flex(center, space-between);
+            img{
+                margin: 10px;
+            }
+            &-text{
+                span{
+                    display: block;
+                }
+                span:first-child{
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                }
+                span:last-child{
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// footer
+.footer{
+    border-top: 1px solid #c0bdbd;
+    height: 210px;
+    padding-top: 15px;
+    &__wrap{
+        width: 100%;
+        &-heading{
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+        &-list{
+            margin-top: 15px;
+            &-items:not(:last-child){
+                margin-bottom: 10px;
+            }
+            &-items{
+                &-link{
+                    font-size: 1.4rem;
+                    color: #898989;
+                }
+            }
+        }
+        &-socials{
+            margin-top: 15px;
+            width: 100%;
+            @include flex(center, space-between);
+            font-size: 2rem;
+            &-link{
+                @include flex(center, center);
+                width: 50px;
+                height: 50px;
+                color: white;
+                background-color: #646464;
+                border-radius: 100%;
+            }
+        }
+        &-info{
+            margin-top: 10px;
+            &-contact:not(:last-child){
+                margin-bottom: 10px;
+            }
+            &-contact{
+                font-size: 1.4rem;
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    &__copyright{
+        margin-top: 10px;
+        @include flex(center,center);
+        font-size: 1.4rem;
+        p b{
+            font-weight: bold;
+        }
+    }
+}
+
+// back to top btn
+.backtotop{
+    font-size: 2rem;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: $primary-color;
+    transition: color .3s;
+    @include flex(center,center);
+    display: none;
+}
+.backtotop:hover{
+    color: white;
 }
