@@ -11,8 +11,8 @@ function scroll() {
     else{
         backTopBtn.style.display = "none";
     }
+    
 }
-
 function backTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

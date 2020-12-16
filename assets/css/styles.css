@@ -551,6 +551,7 @@ html {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  color: black;
   display: none;
 }
 

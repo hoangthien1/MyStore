@@ -567,6 +567,7 @@ html{
     background-color: $primary-color;
     transition: color .3s;
     @include flex(center,center);
+    color: black;
     display: none;
 }
 .backtotop:hover{
